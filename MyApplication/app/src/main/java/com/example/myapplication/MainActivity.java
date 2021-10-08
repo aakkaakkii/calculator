@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     public void delClick(View view) {
         String res = resultTextView.getText().toString();
 
-        if (res.isEmpty()) {
+        if (TextUtils.isEmpty(res)) {
             return;
         }
 
