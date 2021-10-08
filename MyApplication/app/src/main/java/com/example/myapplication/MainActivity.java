@@ -104,4 +104,15 @@ public class MainActivity extends AppCompatActivity {
         resultTextView.setText("");
     }
 
+    public void dotClick(View view) {
+        String res = resultTextView.getText().toString();
+
+        if (TextUtils.isEmpty(res)) {
+            resultTextView.setText("0.");
+
+        } else if (!res.contains(".")) {
+            resultTextView.setText(res + ".");
+        }
+    }
+
 }
