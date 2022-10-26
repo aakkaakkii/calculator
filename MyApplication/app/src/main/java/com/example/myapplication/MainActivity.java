@@ -27,39 +27,34 @@ public class MainActivity extends AppCompatActivity {
 
     public void numberClick(View view) {
 
-        if (!(view instanceof TextView)) {
-            return;
+        if (view instanceof TextView) {
+
+
+            String text = resultTextView.getText().toString();
+            String number = ((TextView) view).getText().toString();
+
+            if (text.equals("0")) {
+                text = "";
+            }
+
+
+            resultTextView.setText(text + number);
         }
-
-        TextView clicked = (TextView) view;
-
-        String number = clicked.getText().toString();
-        String res = resultTextView.getText().toString();
-
-        if (Objects.equals(res, "0")) {
-            res = "";
-        }
-
-        String result = res + number;
-
-        resultTextView.setText(result);
-
     }
 
     public void operationClick(View view) {
 
-        if (!(view instanceof TextView)) {
-            return;
+        if (view instanceof TextView) {
+            operation = ((TextView) view).getText().toString();
+            String operationText = resultTextView.getText().toString();
+
+            if (!operationText.isEmpty()) {
+                operand = Double.parseDouble(operationText);
+            }
+
+            resultTextView.setText("");
+
         }
-
-        if (!TextUtils.isEmpty(resultTextView.getText())) {
-            operand = Double.parseDouble(resultTextView.getText().toString());
-        }
-
-        resultTextView.setText("");
-
-        operation = ((TextView) view).getText().toString();
-
     }
 
     public void equalsClick(View view) {
@@ -78,14 +73,26 @@ public class MainActivity extends AppCompatActivity {
             case "-":
                 resultTextView.setText(String.valueOf(operand - secOperand));
                 break;
-            case "*":
+            case "X":
                 resultTextView.setText(String.valueOf(operand * secOperand));
                 break;
             case "/":
                 resultTextView.setText(String.valueOf(operand / secOperand));
                 break;
+            case "C":
+                operand = 0;
+                operation = "";
+                resultTextView.setText("");
+                break;
+            case "%":
+                resultTextView.setText(String.valueOf(operand * secOperand / 100));
+                break;
         }
+    }
 
+    public void plusMinusClick(View view) {
+        String secOperandText = resultTextView.getText().toString();
+        resultTextView.setText( String.valueOf(Double.parseDouble(secOperandText) * -1));
     }
 
     public void delClick(View view) {
@@ -98,11 +105,6 @@ public class MainActivity extends AppCompatActivity {
         resultTextView.setText(res.substring(0, res.length() - 1));
     }
 
-    public void clearClick(View view) {
-        operand = 0;
-        operation = "";
-        resultTextView.setText("");
-    }
 
     public void dotClick(View view) {
         String res = resultTextView.getText().toString();

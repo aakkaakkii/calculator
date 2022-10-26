@@ -3,42 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:background="#BDB3B3"
-            android:gravity="center"
-            android:text="CLEAR"
-            android:onClick="clearClick"
-            android:textColor="@color/white"
-            android:textSize="22sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:background="#BDB3B3"
-            android:gravity="center"
-            android:onClick="operationClick"
-            android:text="/"
-            android:textColor="@color/white"
-            android:textSize="22sp" />
-
-    </LinearLayout>
+    android:background="@color/white">
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -47,6 +12,56 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:weightSum="4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="operationClick"
+                android:text="C"
+                android:textColor="@color/white"
+                android:background="@color/black"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="plusMinusClick"
+                android:text="+/-"
+                android:textColor="@color/white"
+                android:background="@color/black"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="operationClick"
+                android:text="%"
+                android:textColor="@color/white"
+                android:background="@color/black"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:background="#673AB7"
+                android:gravity="center"
+                android:onClick="operationClick"
+                android:text="/"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
@@ -61,6 +76,7 @@
                 android:onClick="numberClick"
                 android:text="7"
                 android:textColor="@color/white"
+                android:background="@color/black"
                 android:textSize="30sp" />
 
             <TextView
@@ -71,6 +87,7 @@
                 android:onClick="numberClick"
                 android:text="8"
                 android:textColor="@color/white"
+                android:background="@color/black"
                 android:textSize="30sp" />
 
             <TextView
@@ -81,16 +98,17 @@
                 android:onClick="numberClick"
                 android:text="9"
                 android:textColor="@color/white"
+                android:background="@color/black"
                 android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:background="#6C6666"
+                android:background="#673AB7"
                 android:gravity="center"
                 android:onClick="operationClick"
-                android:text="*"
+                android:text="X"
                 android:textColor="@color/white"
                 android:textSize="30sp" />
 
@@ -109,6 +127,7 @@
                 android:onClick="numberClick"
                 android:text="4"
                 android:textColor="@color/white"
+                android:background="@color/black"
                 android:textSize="30sp" />
 
             <TextView
@@ -119,6 +138,7 @@
                 android:onClick="numberClick"
                 android:text="5"
                 android:textColor="@color/white"
+                android:background="@color/black"
                 android:textSize="30sp" />
 
             <TextView
@@ -129,13 +149,14 @@
                 android:onClick="numberClick"
                 android:text="6"
                 android:textColor="@color/white"
+                android:background="@color/black"
                 android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:background="#6C6666"
+                android:background="#673AB7"
                 android:gravity="center"
                 android:onClick="operationClick"
                 android:text="-"
@@ -157,6 +178,7 @@
                 android:onClick="numberClick"
                 android:text="1"
                 android:textColor="@color/white"
+                android:background="@color/black"
                 android:textSize="30sp" />
 
             <TextView
@@ -167,6 +189,7 @@
                 android:onClick="numberClick"
                 android:text="2"
                 android:textColor="@color/white"
+                android:background="@color/black"
                 android:textSize="30sp" />
 
             <TextView
@@ -177,13 +200,14 @@
                 android:onClick="numberClick"
                 android:text="3"
                 android:textColor="@color/white"
+                android:background="@color/black"
                 android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:background="#6C6666"
+                android:background="#673AB7"
                 android:gravity="center"
                 android:onClick="operationClick"
                 android:text="+"
@@ -202,19 +226,10 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="."
-                android:onClick="dotClick"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="numberClick"
                 android:text="0"
+                android:onClick="numberClick"
                 android:textColor="@color/white"
+                android:background="@color/black"
                 android:textSize="30sp" />
 
             <TextView
@@ -222,20 +237,32 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="DEL"
+                android:onClick="dotClick"
+                android:text="."
+                android:textColor="@color/white"
+                android:background="@color/black"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="del"
                 android:onClick="delClick"
                 android:textColor="@color/white"
-                android:textSize="22sp" />
+                android:background="@color/black"
+                android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_weight="1"
-                android:background="#FF0000"
+                android:background="#FFC107"
                 android:gravity="center"
                 android:onClick="equalsClick"
                 android:text="="
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="30sp" />
 
         </TableRow>
@@ -245,14 +272,12 @@
     <TextView
         android:id="@+id/resultTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
         android:textAlignment="textEnd"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
